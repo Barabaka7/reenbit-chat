@@ -9,7 +9,7 @@ export const MessageInChat = ({avatar, from, message, timeStamp}) => {
         messageToShow = (
             <div className="messageFrom">
                 <img name='avatar' src={avatar} />
-                <text>{message}</text>
+                <span className="messageFromText">{message}</span>
                 <p>{date}</p>
             </div>
           );    
@@ -17,7 +17,7 @@ export const MessageInChat = ({avatar, from, message, timeStamp}) => {
     else{
         messageToShow = (
             <div className="messageTo">
-                <text>{message}</text>
+                <span className="messageToText">{message}</span>
                 <p>{date}</p>
             </div>
           );    

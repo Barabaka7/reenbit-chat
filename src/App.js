@@ -11,18 +11,19 @@ function App() {
   const [contacts, setContacts] = useState(CONTACTS);
 
   useEffect(()=>{
-   // setContacts(JSON.parse(window.localStorage.getItem('contacts')));
-    setCurrentChat(JSON.parse(window.localStorage.getItem('currentChat')));
-  //  alert(`alert from mounting ${JSON.parse(window.localStorage.getItem('currentChat'))}`);
+   // setContacts(CONTACTS);
+//setContacts(JSON.parse(window.localStorage.getItem('contacts')));
+    //setCurrentChat(JSON.parse(window.localStorage.getItem('currentChat')));
+ // alert(`alert from mounting ${JSON.parse(window.localStorage.getItem('contacts'))}`);
   }, [])
 
   useEffect(()=>{
-    window.localStorage.setItem('contacts', contacts);
-  
+  //  window.localStorage.setItem('contacts', contacts);
+    //alert(`alert from current chat ${window.localStorage.getItem('contacts')}`)
   }, [contacts])
 
   useEffect(()=>{
-    window.localStorage.setItem('currentChat', currentChat);
+  //  window.localStorage.setItem('currentChat', currentChat);
   //  alert(`alert from current chat ${window.localStorage.getItem('currentChat')}`)
   }, [currentChat])
 
@@ -50,17 +51,15 @@ function App() {
 
   return (
     <div className="App">
-      <div className="leftContainer">
-          <UserPane className="UserPane"
-                    contacts={ contacts }
+       <div className="leftContainer">
+          <UserPane contacts={ contacts }
                     setCurrentChat={setCurrentChat}/>
       </div>
       <div className="rightContainer">
           <CurrentChatPane
-                           className="CurrentChatPane" 
                            contacts={contacts}
                            currentChat={currentChat}
-                           addNewMessage={addNewMessage} />
+                           addNewMessage={addNewMessage} /> 
         </div>
     </div>
   );

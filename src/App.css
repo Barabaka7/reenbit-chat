@@ -1,26 +1,32 @@
 .App {
   display: flex;
+  height: 630px;
 }
 
 .leftContainer {
   padding-top: 15px;
-  
   display: flex;
   background-color:lightblue;
-  flex: 4
+  flex: 4;
+  width: 430px;
+  padding-right: 50px;
 }
 
-.Chats {
+.chats {
   padding-left: 15px;
   background-color:rgb(215, 232, 237);
+  width: 530px;
+  padding-right: 10px;
 }
 
 .rightContainer {
   padding-top: 15px;
   padding-left: 15px;
+  padding-right: 10px;
   display: flex;
   background-color:lightsteelblue;
   flex: 5;
+  height: 630px;
 }
 
 .contactName {
@@ -34,29 +40,44 @@
   padding-top: 20px;
   width: 100%;
   justify-content: center;
+  padding-bottom: 10px;
   
 }
 
 .currentChat {
   padding-left: 15px;
   padding-top: 40px;
-  
+  overflow-y: scroll;
+  height: 490px;
+}
+
+.messageForm {
+  position: absolute;
+  bottom: 0px;
 }
 
 .avatar {
   padding-left: 15px;
-}
+  }
 
 .messageFrom{
-  color: white;
-  align-items: flex-start;
-  background-color: darkslategrey;
+  color: white;  
+}
 
+.messageFromText {
+  background-color: darkslategrey;
+  border-radius: 20px;
 }
 
 .messageTo{
-  align-items: flex-end;
+  color: white;
+  width: 100%;
+  float: right;
+}
 
+.messageToText {
+  background-color: rgb(81, 87, 87);
+  border-radius: 20px;
 }
 
 img {
@@ -80,9 +101,10 @@ input[type="textarea"]{
   padding: 7px 8px;
   font-size: 14px;
   border: 1px solid transparent;
-  width: 90%;
+  width: 580px;
   border-radius: 20px;
   height: 30px;
+  align-items: flex-end;
 }
 
 input[type="submit"] {

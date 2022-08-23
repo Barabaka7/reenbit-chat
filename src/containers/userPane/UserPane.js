@@ -47,7 +47,7 @@ if (searchTerm !== '')
                    handleChange={handleSearchChange}/>
       </section>  
       
-      <section className="Chats">
+      <section className="chats">
       <h2 style={{ "paddingLeft": "10px", "paddingTop": "10px" }}>Chats</h2>  
         <ChatsList chatsToList={chatsToList} handleChatClick={handleChatClick}/>
       </section>  
