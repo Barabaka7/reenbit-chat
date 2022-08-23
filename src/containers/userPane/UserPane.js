@@ -42,13 +42,13 @@ if (searchTerm !== '')
         <AvatarBar avatarData={avatarData}/>
       </section>  
 
-      <section>
+      <section className="searchBar">
         <SearchBar searchTerm={searchTerm}
                    handleChange={handleSearchChange}/>
       </section>  
       
-      <section>
-      <h2>Chats</h2>  
+      <section className="Chats">
+      <h2 style={{ "paddingLeft": "10px", "paddingTop": "10px" }}>Chats</h2>  
         <ChatsList chatsToList={chatsToList} handleChatClick={handleChatClick}/>
       </section>  
     </div>

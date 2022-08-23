@@ -10,17 +10,11 @@ export const CurrentChatPane = ({ contacts, currentChat, addNewMessage }) => {
 const [newMessage, setNewMessage] = useState('');
 
 const generateResponseFromChak = async (chatId) => {
-
-  let randomJoke = await fetchingRandomJoke();
-
-  console.log(randomJoke);        
+  let randomJoke = await fetchingRandomJoke();        
   addNewMessage(randomJoke, true, currentChat);
-         
 }
 
 const chatToList = sortByDate(contacts.filter(id => id.contactId === currentChat))[0];
-
-//console.log(chatToList);
 
 const avatarData = { avatar: chatToList.avatar,
                      isOnline: chatToList.isOnline,
@@ -39,11 +33,11 @@ const avatarData = { avatar: chatToList.avatar,
 
   return (
     <div>
-      <section>
+      <section className="avatar">
         <AvatarBar avatarData={avatarData}/>
       </section>  
 
-      <section>
+      <section className="currentChat">
         <CurrentChat chatToList={chatToList}/>
       </section>  
       

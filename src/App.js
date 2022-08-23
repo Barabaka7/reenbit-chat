@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useEffect, useState } from "react";
-import { SplitPane } from "./components/splitPane/SplitPane.js"
+//import { SplitPane } from "./components/splitPane/SplitPane.js"
 import { UserPane } from "./containers/userPane/UserPane.js"
 import { CurrentChatPane } from "./containers/currentChatPane/CurrentChatPane.js"
 import { CONTACTS } from "./Utilities/data.js"
@@ -8,11 +8,23 @@ import { CONTACTS } from "./Utilities/data.js"
 function App() {
 
   const [currentChat, setCurrentChat] = useState(1);
-  const [contacts, setContacts] = useState([]);
+  const [contacts, setContacts] = useState(CONTACTS);
 
   useEffect(()=>{
-    setContacts(CONTACTS);
+   // setContacts(JSON.parse(window.localStorage.getItem('contacts')));
+    setCurrentChat(JSON.parse(window.localStorage.getItem('currentChat')));
+  //  alert(`alert from mounting ${JSON.parse(window.localStorage.getItem('currentChat'))}`);
   }, [])
+
+  useEffect(()=>{
+    window.localStorage.setItem('contacts', contacts);
+  
+  }, [contacts])
+
+  useEffect(()=>{
+    window.localStorage.setItem('currentChat', currentChat);
+  //  alert(`alert from current chat ${window.localStorage.getItem('currentChat')}`)
+  }, [currentChat])
 
   const addNewMessage = (newMessage, from, contactId) => {
 
@@ -38,15 +50,18 @@ function App() {
 
   return (
     <div className="App">
-      {/* <SplitPane
-        left={
-          */}
-          <UserPane contacts={ contacts }
+      <div className="leftContainer">
+          <UserPane className="UserPane"
+                    contacts={ contacts }
                     setCurrentChat={setCurrentChat}/>
-      
-          <CurrentChatPane contacts={contacts}
+      </div>
+      <div className="rightContainer">
+          <CurrentChatPane
+                           className="CurrentChatPane" 
+                           contacts={contacts}
                            currentChat={currentChat}
                            addNewMessage={addNewMessage} />
+        </div>
     </div>
   );
 }

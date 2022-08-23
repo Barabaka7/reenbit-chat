@@ -7,17 +7,17 @@ export const MessageInChat = ({avatar, from, message, timeStamp}) => {
   
     if (from) {      
         messageToShow = (
-            <div className="messageFrom" style={{justifyContent: 'start'}}>
+            <div className="messageFrom">
                 <img name='avatar' src={avatar} />
-                <span>{message}</span>
+                <text>{message}</text>
                 <p>{date}</p>
             </div>
           );    
     }
     else{
         messageToShow = (
-            <div className="messageTo" style={{justifyContent: 'end'}}>
-                <span>{message}</span>
+            <div className="messageTo">
+                <text>{message}</text>
                 <p>{date}</p>
             </div>
           );    

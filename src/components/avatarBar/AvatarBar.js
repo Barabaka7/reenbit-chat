@@ -7,10 +7,10 @@ export const AvatarBar = ({avatarData}) => {
         <input type="checkbox" id="isOnline" name="isOnline" value="isOnline" disabled="disabled"/>
 
     return (
-    <div>
+    <div className="avatar">
        <img src={avatarData.avatar} className="avatar" /> 
        {online}
-       <h3>{avatarData.contactName}</h3>
+       <span className="contactName">{avatarData.contactName}</span>
     </div>
 
   );
