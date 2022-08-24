@@ -7,27 +7,32 @@ import { fetchingRandomJoke } from "../../Utilities/fetching.js"
 
 export const CurrentChatPane = ({ contacts, currentChat, addNewMessage }) => {
 
-const [newMessage, setNewMessage] = useState('');
+  const [newMessage, setNewMessage] = useState('');
 
-const messagesEndRef = useRef(null);
+  const messagesEndRef = useRef(null);
 
-const generateResponseFromChak = async (chatId) => {
-  let randomJoke = await fetchingRandomJoke();        
-  addNewMessage(randomJoke, true, currentChat);
-}
-
-const chatToList = contacts.filter(id => id.contactId === currentChat)[0];
-
-chatToList.messages.sort((a,b) => {     
-  return new Date(a.timeStamp) > new Date(b.timeStamp) ? 1 : -1});
-
-useEffect(()=>{
-        messagesEndRef.current.scrollIntoView({ behavior: 'smooth' })
+  useEffect(()=>{
+    if (!messagesEndRef.current) return;
+    messagesEndRef.current.scrollIntoView({ behavior: 'smooth' })
   },[contacts])
 
-const avatarData = { avatar: chatToList.avatar,
-                     isOnline: chatToList.isOnline,
-                     contactName: chatToList.contactName};
+
+  const generateResponseFromChak = async (chatId) => {
+    let randomJoke = await fetchingRandomJoke();
+    addNewMessage(randomJoke, true, currentChat);
+  }
+
+  const chatToList = contacts.filter(id => id.contactId === currentChat)[0];
+
+  if (!chatToList) return null;
+
+  chatToList.messages.sort((a,b) => {
+    return new Date(a.timeStamp) > new Date(b.timeStamp) ? 1 : -1});
+
+
+  const avatarData = { avatar: chatToList.avatar,
+                       isOnline: chatToList.isOnline,
+                       contactName: chatToList.contactName};
 
  const handleSubmit = (e) => {
 
