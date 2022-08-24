@@ -16,7 +16,7 @@
 .chats {
   padding-left: 15px;
   background-color:rgb(215, 232, 237);
-  width: 530px;
+  width: 110%;
   padding-right: 10px;
   overflow-y: scroll;
   height: 530px;

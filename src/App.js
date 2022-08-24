@@ -9,10 +9,14 @@ function App() {
 
   const [currentChat, setCurrentChat] = useState(1);
   const [contacts, setContacts] = useState(CONTACTS);
+    // window.localStorage.getItem('contacts')
+    // ? JSON.parse(window.localStorage.getItem('contacts'))
+    // : 
+
 
   useEffect(()=>{
-   // setContacts(CONTACTS);
-//setContacts(JSON.parse(window.localStorage.getItem('contacts')));
+   setContacts(CONTACTS);
+//setContacts());
     //setCurrentChat(JSON.parse(window.localStorage.getItem('currentChat')));
  // alert(`alert from mounting ${JSON.parse(window.localStorage.getItem('contacts'))}`);
   }, [])
@@ -47,13 +51,29 @@ function App() {
     })
     }
 
+    const handleLogin = (googleData) => {
+      console.log('LOGIN')
+      console.log(googleData)
+      
+    }
+
+    const handleFailure = (result) => {
+      console.log('FAILURE')
+      console.log(result);
+    }
+
   return (
     <div className="App">  
     <header>
       <h1>Google Login</h1>
     <div><GoogleLogin 
       clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
-      buttonText="Log in with Google"/>
+      buttonText="Log in with Google"
+      onSuccess={handleLogin}
+      onFailure={handleFailure}
+      cookiePolicy={'single_host_origin'}
+      
+      />
     </div>
     </header>
        
