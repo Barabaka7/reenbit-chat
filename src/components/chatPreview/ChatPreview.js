@@ -12,7 +12,7 @@ export const ChatPreview = (props) => {
      <tr onClick={handleClick}>
         <td>
             <img name='avatar' src={props.avatar} />
-            {props.isOnline ? <input type="checkbox" disabled="disabled" id="isOnline" name="isOnline" value="isOnline" checked/> : <input type="checkbox" id="isOnline" name="isOnline" value="isOnline" disabled="disabled"/>}
+            {props.isOnline ? <input type="checkbox" disabled="disabled" id="isOnline" name="isOnline" value={props.isOnline} checked/> : <input type="checkbox" id="isOffline" name="isOffline" value={props.isOnline} disabled="disabled"/>}
         </td>
         <td>
             <h3>{props.contactName}</h3>

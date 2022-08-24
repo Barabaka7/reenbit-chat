@@ -1,9 +1,9 @@
 import './App.css';
 import React, { useEffect, useState } from "react";
-//import { SplitPane } from "./components/splitPane/SplitPane.js"
 import { UserPane } from "./containers/userPane/UserPane.js"
 import { CurrentChatPane } from "./containers/currentChatPane/CurrentChatPane.js"
 import { CONTACTS } from "./Utilities/data.js"
+import GoogleLogin from 'react-google-login';
 
 function App() {
 
@@ -47,10 +47,16 @@ function App() {
     })
     }
 
-
-
   return (
-    <div className="App">
+    <div className="App">  
+    <header>
+      <h1>Google Login</h1>
+    <div><GoogleLogin 
+      clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+      buttonText="Log in with Google"/>
+    </div>
+    </header>
+       
        <div className="leftContainer">
           <UserPane contacts={ contacts }
                     setCurrentChat={setCurrentChat}/>

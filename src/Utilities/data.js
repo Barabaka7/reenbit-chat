@@ -29,7 +29,7 @@ export const CONTACTS = [
     {
     contactId: 2,
     contactName: 'Josefina',
-    isOnline: true,
+    isOnline: false,
     avatar: '/img/icons8-mr-krabs-64.png',
     messages: [
         {

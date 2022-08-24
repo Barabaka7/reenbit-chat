@@ -2,14 +2,14 @@ import React from "react";
 
 export const AvatarBar = ({avatarData}) => {
 
-  const online = avatarData.isOnline ?
-        <input type="checkbox" id="isOnline" name="isOnline" value="isOnline" disabled="disabled" checked/> :
-        <input type="checkbox" id="isOnline" name="isOnline" value="isOnline" disabled="disabled"/>
+  const statusOnline =  <input type="checkbox" checked disabled/>
+  const statusOffline = <input type="checkbox" disabled/>
+  const status = avatarData.isOnline ? statusOnline : statusOffline;
 
     return (
     <div className="avatar">
        <img src={avatarData.avatar} className="avatar" /> 
-       {online}
+       {status}
        <span className="contactName">{avatarData.contactName}</span>
     </div>
 

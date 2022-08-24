@@ -10,6 +10,7 @@
   flex: 4;
   width: 430px;
   padding-right: 50px;
+  height: 630px;
 }
 
 .chats {
@@ -17,6 +18,10 @@
   background-color:rgb(215, 232, 237);
   width: 530px;
   padding-right: 10px;
+  overflow-y: scroll;
+  height: 530px;
+  cursor: pointer;
+
 }
 
 .rightContainer {
@@ -46,9 +51,11 @@
 
 .currentChat {
   padding-left: 15px;
+  padding-right: 30px;
   padding-top: 40px;
   overflow-y: scroll;
   height: 490px;
+  width: 550px;
 }
 
 .messageForm {
@@ -65,8 +72,17 @@
 }
 
 .messageFromText {
-  background-color: darkslategrey;
-  border-radius: 20px;
+    border-radius: 20px;
+    display: block;
+    width: 80%;
+    height: max-content;
+    padding: 8px;
+
+    background: rgb(38, 114, 129);
+    border: 1px solid #666;
+    color: rgb(216, 210, 210);
+    text-align: left;
+
 }
 
 .messageTo{
@@ -76,8 +92,20 @@
 }
 
 .messageToText {
-  background-color: rgb(81, 87, 87);
   border-radius: 20px;
+  width: auto;
+  height: 16px;
+  padding: 8px;
+
+  background: rgb(194, 194, 194);
+  border: 1px solid #666;
+  color: rgb(62, 60, 60);
+  text-align: center;
+}
+
+.alignMeRight{
+  float: right;
+  text-align: end;
 }
 
 img {
@@ -123,7 +151,17 @@ input[type="submit"] {
 input[type="submit"]:hover {
   opacity: 1;
 }
-
+/* 
 input[type="checkbox"]{
 
 }
+
+input[type="checkbox"]:after{
+
+
+}
+
+input[type="checkbox"]:checked:after{
+  
+
+} */
