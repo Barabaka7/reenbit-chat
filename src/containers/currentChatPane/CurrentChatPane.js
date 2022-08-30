@@ -11,19 +11,23 @@ const [newMessage, setNewMessage] = useState('');
 
 const messagesEndRef = useRef(null);
 
-const generateResponseFromChak = async (chatId) => {
+useEffect(()=>{
+  if (!messagesEndRef.current) return;
+  messagesEndRef.current.scrollIntoView({ behavior: 'smooth' })
+},[contacts])
+
+const generateResponseFromChuck = async (chatId) => {
   let randomJoke = await fetchingRandomJoke();        
   addNewMessage(randomJoke, true, currentChat);
 }
+
+if (!contacts) return <div>Data is loading...</div>;
 
 const chatToList = contacts.filter(id => id.contactId === currentChat)[0];
 
 chatToList.messages.sort((a,b) => {     
   return new Date(a.timeStamp) > new Date(b.timeStamp) ? 1 : -1});
 
-useEffect(()=>{
-        messagesEndRef.current.scrollIntoView({ behavior: 'smooth' })
-  },[contacts])
 
 const avatarData = { avatar: chatToList.avatar,
                      isOnline: chatToList.isOnline,
@@ -35,7 +39,7 @@ const avatarData = { avatar: chatToList.avatar,
 
     e.preventDefault();
     addNewMessage(newMessage, false, currentChat);
-    setTimeout(() => generateResponseFromChak(currentChat), delayFrom10to15Sec);
+    setTimeout(() => generateResponseFromChuck(currentChat), delayFrom10to15Sec);
     setNewMessage('');
 
   }

@@ -8,19 +8,18 @@
   display: flex;
   background-color:lightblue;
   flex: 4;
-  width: 430px;
-  padding-right: 50px;
+  width: auto;
+  
   height: 630px;
 }
 
 .chats {
   padding-left: 15px;
   background-color:rgb(215, 232, 237);
-  width: 110%;
-  padding-right: 10px;
+  width: 100%;
   overflow-y: scroll;
-  height: 530px;
-  cursor: pointer;
+  height: 80%;
+  cursor: pointer;  
 
 }
 
@@ -31,7 +30,8 @@
   display: flex;
   background-color:lightsteelblue;
   flex: 5;
-  height: 630px;
+  height: 100%;
+  width: auto;
 }
 
 .contactName {
@@ -54,13 +54,13 @@
   padding-right: 30px;
   padding-top: 40px;
   overflow-y: scroll;
-  height: 490px;
+  height: 80%;
   width: 550px;
 }
 
 .messageForm {
   position: absolute;
-  bottom: 0px;
+  bottom: 10px;
 }
 
 .avatar {
@@ -133,6 +133,7 @@ input[type="textarea"]{
   border-radius: 20px;
   height: 30px;
   align-items: flex-end;
+  padding-bottom: 10px;
 }
 
 input[type="submit"] {
@@ -144,12 +145,27 @@ input[type="submit"] {
   border: 1px solid transparent;
   border-radius: inherit;
   background: transparent url("https://cdn-icons-png.flaticon.com/512/8256/8256572.png") no-repeat center;
+  background-size: 20px 20px;
+  margin-left: -50px;
   cursor: pointer;
   opacity: 0.7;
 }
 
 input[type="submit"]:hover {
   opacity: 1;
+}
+
+.loginPage {
+  text-align: center;
+}
+
+.logoutButton{
+  display: inline;
+  height: 20px;
+  border: 1px solid transparent;
+  border-radius: inherit;
+  cursor: pointer;
+  opacity: 0.7;
 }
 /* 
 input[type="checkbox"]{

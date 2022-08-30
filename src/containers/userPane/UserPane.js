@@ -3,13 +3,15 @@ import { SearchBar } from "../../components/searchBar/SearchBar";
 import { AvatarBar } from "../../components/avatarBar/AvatarBar";
 import { ChatsList } from "../../components/chatsList/ChatsList";
 import { sortByDate } from "../../Utilities/utilities.js"
-import { USER } from "../../Utilities/data.js"
+//import { USER } from "../../Utilities/data.js"
 
-export const UserPane = ({ contacts, setCurrentChat }) => {
+export const UserPane = ({ contacts, setCurrentChat, profile, logoutButton }) => {
 
   //console.log(contacts);
 
   const [ searchTerm, setSearchTerm ] = useState('');
+
+  if (!contacts) return <div>Data is loading...</div>;
   
   let chatsToList = contacts.map( contact => {
     return {
@@ -25,9 +27,9 @@ export const UserPane = ({ contacts, setCurrentChat }) => {
 
   const handleChatClick = (newCurrentChat) => {setCurrentChat(newCurrentChat)}
 
-let avatarData = { avatar: USER.avatar,
-                   isOnline: USER.isOnline,
-                   contactName: USER.contactName};
+let avatarData = { avatar: profile.imageUrl,
+                   isOnline: true,
+                   contactName: profile.name};
 
 if (searchTerm !== '')
 {
@@ -40,6 +42,7 @@ if (searchTerm !== '')
     <div>
       <section>
         <AvatarBar avatarData={avatarData}/>
+        <div className="logoutButton">{logoutButton}</div>
       </section>  
 
       <section className="searchBar">
