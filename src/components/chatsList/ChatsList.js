@@ -14,7 +14,7 @@ export const ChatsList = ({chatsToList, handleChatClick}) => {
                 handleChatClick={handleChatClick}/> );
 
     return (
-        <table>
+        <table className="makeMeLeftPadding">
         <tbody>{chats}</tbody>
          </table>
       

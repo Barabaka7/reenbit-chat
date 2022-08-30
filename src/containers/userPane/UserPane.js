@@ -40,9 +40,9 @@ if (searchTerm !== '')
 
   return (
     <div>
-      <section>
+      <section className="user">
         <AvatarBar avatarData={avatarData}/>
-        <div className="logoutButton">{logoutButton}</div>
+      <div className="logoutButton"> {logoutButton}</div>
       </section>  
 
       <section className="searchBar">
@@ -51,7 +51,7 @@ if (searchTerm !== '')
       </section>  
       
       <section className="chats">
-      <h2 style={{ "paddingLeft": "10px", "paddingTop": "10px" }}>Chats</h2>  
+      <h2 className="makeMeLeftPadding">Chats</h2>  
         <ChatsList chatsToList={chatsToList} handleChatClick={handleChatClick}/>
       </section>  
     </div>

@@ -1,6 +1,7 @@
 .App {
   display: flex;
-  height: 630px;
+  height: 600px;
+  width: 100%;
 }
 
 .leftContainer {
@@ -8,30 +9,29 @@
   display: flex;
   background-color:lightblue;
   flex: 4;
-  width: auto;
-  
-  height: 630px;
+  height: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 1px ridge;
 }
 
 .chats {
-  padding-left: 15px;
+  height: 100%;
   background-color:rgb(215, 232, 237);
   width: 100%;
   overflow-y: scroll;
-  height: 80%;
-  cursor: pointer;  
+  cursor: pointer; 
+  height: 78%; 
 
 }
 
 .rightContainer {
-  padding-top: 15px;
-  padding-left: 15px;
-  padding-right: 10px;
   display: flex;
-  background-color:lightsteelblue;
+  background-color:lightblue;
   flex: 5;
-  height: 100%;
-  width: auto;
+  height: 102%;
+  border: 1px solid;
+  border-left: none;
 }
 
 .contactName {
@@ -46,7 +46,6 @@
   width: 100%;
   justify-content: center;
   padding-bottom: 10px;
-  
 }
 
 .currentChat {
@@ -54,17 +53,21 @@
   padding-right: 30px;
   padding-top: 40px;
   overflow-y: scroll;
-  height: 80%;
-  width: 550px;
+  height: 70%;
+  width: auto;
+  background-color:lightsteelblue;
 }
 
 .messageForm {
-  position: absolute;
-  bottom: 10px;
+  /* position: absolute;
+  bottom: 0px; */
+  padding-left: 30px;
 }
 
 .avatar {
   padding-left: 15px;
+  padding-bottom: 5px;
+  padding-top: 10px;
   }
 
 .messageFrom{
@@ -126,13 +129,13 @@ input[type="search"]{
 
 input[type="textarea"]{
   margin: 0;
-  padding: 7px 8px;
+  padding: 17px 8px;
   font-size: 14px;
   border: 1px solid transparent;
   width: 580px;
   border-radius: 20px;
-  height: 30px;
-  align-items: flex-end;
+  height: 5px;
+  align-items: center;
   padding-bottom: 10px;
 }
 
@@ -160,12 +163,17 @@ input[type="submit"]:hover {
 }
 
 .logoutButton{
-  display: inline;
-  height: 20px;
-  border: 1px solid transparent;
-  border-radius: inherit;
-  cursor: pointer;
+  align-items: flex-end;
   opacity: 0.7;
+}
+
+.user{
+  display: inline-flex;
+  gap: 200px; 
+}
+
+.makeMeLeftPadding{
+  padding-left: 15px;
 }
 /* 
 input[type="checkbox"]{
