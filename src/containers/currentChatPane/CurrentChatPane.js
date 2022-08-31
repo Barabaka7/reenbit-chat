@@ -45,7 +45,7 @@ const avatarData = { avatar: chatToList.avatar,
 
   return (
     <div>
-      <section className="avatar">
+      <section  className="avatar">
         <AvatarBar avatarData={avatarData}/>
       </section>  
 
