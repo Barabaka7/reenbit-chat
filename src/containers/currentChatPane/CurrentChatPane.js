@@ -2,7 +2,6 @@ import React, { useEffect, useState, useRef } from "react";
 import { CurrentChat } from "../../components/currentChat/CurrentChat";
 import { AvatarBar } from "../../components/avatarBar/AvatarBar";
 import { MessageForm } from "../../components/messageForm/MessageForm";
-import { sortByDate } from "../../Utilities/utilities.js"
 import { fetchingRandomJoke } from "../../Utilities/fetching.js"
 
 export const CurrentChatPane = ({ contacts, currentChat, addNewMessage }) => {
